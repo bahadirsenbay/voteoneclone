@@ -1,0 +1,22 @@
+.navigationBody ul {
+  list-style: none;
+  margin-bottom: 30px; }
+  .navigationBody ul li {
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    padding-left: 40px;
+    margin-bottom: 10px;
+    height: 50px;
+    font-size: 21px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    color: #666c72;
+    cursor: pointer; }
+    .navigationBody ul li:hover {
+      background-color: #f5f5f5;
+      color: #CE2A2B; }
+    .navigationBody ul li svg {
+      margin-right: 10px;
+      color: "black"; }
+
+/*# sourceMappingURL=Navigation.css.map */
