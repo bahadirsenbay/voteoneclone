@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
 const PostScreen = () => {
     const classes = useStyles();
     return(
-            <Grid className={classes.root} container direction="column" xs={12}>
+            <Grid className={classes.root} container direction="column" xs={12} sm={12}>
             <Grid item container alignItems="center" spacing={3} className={classes.gridBody}>
                 <Grid item>
                 <Avatar className={classes.large} alt="Remy Sharp" src="/static/images/avatar/1.jpg" />

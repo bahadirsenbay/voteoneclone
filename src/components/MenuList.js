@@ -1,14 +1,11 @@
-import { Avatar, Grid, IconButton, ListItemIcon, ListItemText, makeStyles, Menu, MenuItem, Typography } from '@material-ui/core';
-import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
-import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
+import {  ListItemIcon, ListItemText, Menu, MenuItem } from '@material-ui/core';
 import BookmarkBorderOutlinedIcon from '@material-ui/icons/BookmarkBorderOutlined';
 import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import ContactSupportOutlinedIcon from '@material-ui/icons/ContactSupportOutlined';
 import NightsStayOutlinedIcon from '@material-ui/icons/NightsStayOutlined';
 import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
 import { withStyles } from '@material-ui/core/styles';
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 
 const StyledMenu = withStyles({
     paper: {
@@ -33,70 +30,21 @@ const StyledMenu = withStyles({
     />
   ));
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        backgroundColor: "#F5F5F5",
-        maxWidth: 294,
-        padding: 5,
-        borderRadius: 40,
-        cursor: "pointer",
-        overflow:'hidden'
-    },
-
-    large: {
-        width: theme.spacing(6),
-        height: theme.spacing(6),
-        border: "2px solid #69D5EC"
-    },
-
-    btnCss: {
-        marginLeft: theme.spacing(4),
-        color: "#7F8199",
-        marginTop: 5
-    },
-
-    listItem:{
-        fontSize:17
-    },
-}))
-
-
-
-const ProfileDrop = () => {
-    const classes = useStyles();
-    const [anchorEl, setAnchorEl] = useState(null);
+const MenuList = () => {
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
+        console.log(anchorEl)
 
     };
 
     const handleClose = () => {
         setAnchorEl(null);
+        console.log(anchorEl)
     };
 
-    return (
-        <Grid container>
-            <Grid container className={classes.root} onClick={handleClick}>
-                <Grid item container direction="row" spacing={2} alignItems="center">
-                    <Grid item>
-                        <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" className={classes.large} />
-                    </Grid>
-                    <Grid item direction="column" style={{ marginTop: 5 }}>
-                        <Grid item justify="center">
-                            <Typography>Bahadır Şenbay</Typography>
-                        </Grid>
-                        <Grid item>
-                            <Typography style={{ opacity: 0.7 }} variant="caption" display="block" gutterBottom>@bahadirsenbay</Typography>
-                        </Grid>
-                    </Grid>
-                    <Grid item className={classes.btnCss}>
-                        <KeyboardArrowDownIcon />
-                    </Grid>
-                </Grid>
-            </Grid>
-            <Grid>
-                <StyledMenu
+    return(
+                        <StyledMenu
                     className={classes.menuBody}
                     id="simple-menu"
                     anchorEl={anchorEl}
@@ -104,7 +52,7 @@ const ProfileDrop = () => {
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                 >
-                    <MenuItem component={Link} to="/profile" onClick={handleClose}>
+                    <MenuItem onClick={handleClose}>
                         <ListItemIcon style={{marginRight:"-15px"}}>
                             <PersonOutlineOutlinedIcon fontSize="small" />
                         </ListItemIcon>
@@ -160,9 +108,7 @@ const ProfileDrop = () => {
                     </MenuItem>
                     
                 </StyledMenu>
-            </Grid>
-        </Grid>
     )
 }
 
-export default ProfileDrop;
+export default MenuList;

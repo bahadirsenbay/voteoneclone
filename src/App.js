@@ -7,6 +7,7 @@ import NotifiComp from './components/NotifiComp'
 import theme from './theme'
 import { CssBaseline } from '@material-ui/core';
 import BottomNav from './components/BottomNav';
+import ProfileScreen from './components/ProfileScreen';
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
                         <Switch>
                             <Route exact path="/" component={Home}/>
                             <Route path="/notifications" component={NotifiComp}/>
+                            <Route path="/profile" component={ProfileScreen}/>
                         </Switch>
                     </BrowserRouter>
                     { isMobile && <BottomNav/>}

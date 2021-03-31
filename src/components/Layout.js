@@ -12,7 +12,6 @@ const useStyles = makeStyles((theme) => ({
         zIndex:1000,
         padding:"15px 15px 15px 30px",
         borderBottom: "1px solid #F5F5F5",
-        marginBottom: 12
 
     },
 
@@ -48,7 +47,7 @@ const Layout = (props) => {
             </Grid>
             </Hidden>
             
-            <Grid item sm={6} xs={12} style={{border:"1px solid #f5f5f5", height: "100%"}}>
+            <Grid item sm={12} xs={12} lg={6} style={{border:"1px solid #f5f5f5", height: "100%"}}>
                 { !isMobile && <Grid item className={classes.root}><Typography classes={{h5: classes.textColor}}  variant="h5">Son Gönderiler</Typography>
                 </Grid>
                 }

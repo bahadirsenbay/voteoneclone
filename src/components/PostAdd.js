@@ -11,20 +11,20 @@ import {
     Button, 
     TextField, 
     Dialog, 
-    DialogActions, 
     DialogContent, 
     DialogContentText, 
     DialogTitle,
     Divider} 
 from '@material-ui/core';
-import { MultilineChartOutlined } from '@material-ui/icons';
+import { isMobile } from 'react-device-detect';
 
 
 const useStyles = makeStyles((theme) => ({
     root:{
         borderRadius:20,
         backgroundColor:"#F0F2F5",
-        marginBottom: theme.spacing(1.5)
+        marginBottom: theme.spacing(1.5),
+        marginTop: theme.spacing(2)
     },
 
     postInput:{
@@ -87,13 +87,13 @@ const PostAdd = () => {
     return(
         <Grid container>
         <Grid onClick={handleClickOpen} item container className={classes.root}>
-            <Grid item sm={10}>
+            <Grid item sm={10} xs={8}> 
             <InputBase
             className={classes.postInput}
             placeholder="Bir Fikrin mi Var?"
             startAdornment={<Avatar>B</Avatar>}/>
             </Grid>
-            <Grid item sm={2}>
+            <Grid item sm={2} xs={4} style={ isMobile ? {display:"flex", justifyContent:"flex-end"} : null}>
             <IconButton>
                 <PanoramaOutlinedIcon/>
             </IconButton>
