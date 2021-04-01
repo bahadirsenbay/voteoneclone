@@ -80,6 +80,7 @@ const MobileNavScreen = () => {
                     />
                 </Grid>
                 <Grid onClick={handleClick} style={{display:"flex", alignItems:"center", justifyContent:"Center"}} item xs={2} sm={2}><Avatar src={Photo} className={classes.large}>B</Avatar></Grid>
+            {/* sikik */}
             </Grid>
             <Grid>
                 <StyledMenu
