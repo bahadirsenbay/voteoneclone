@@ -1,6 +1,7 @@
 import { Avatar, Grid, IconButton, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
 import bgImage from '../img/background.jpeg';
+import Photo from '../img/profile.jpg'
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import AttachmentOutlinedIcon from '@material-ui/icons/AttachmentOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
@@ -52,7 +53,7 @@ const MobileProfileBox = () => {
             <Grid xs={12} item style={{maxHeight:186, overflow:"hidden", position:"relative"}}>
                 <Grid><img src={bgImage} height="100%" width="100%" /></Grid>
                 <Grid style={{position:"absolute", top:56, left:14, color:"white", maxWidth:325}} item container>
-                    <Grid item><Avatar className={classes.large}>B</Avatar></Grid>
+                    <Grid item><Avatar src={Photo} className={classes.large}>B</Avatar></Grid>
                     <Grid item direction="column" justify="center" style={{display:"flex"}}>
                         <Typography variant="h6">Bahadır Şenbay</Typography>
                         <Typography variant="caption">@bhdrsnby</Typography>

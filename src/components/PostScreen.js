@@ -3,6 +3,7 @@ import RepeatIcon from '@material-ui/icons/Repeat';
 import MessageOutlinedIcon from '@material-ui/icons/MessageOutlined';
 import KeyboardCapslockIcon from '@material-ui/icons/KeyboardCapslock';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import Photo from '../img/profile.jpg'
 import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
@@ -23,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     large:{
         width: theme.spacing(7),
         height: theme.spacing(7),
+        border:"2px solid #69D5EC"
     },
 
     typographyCss:{
@@ -55,7 +57,7 @@ const PostScreen = () => {
             <Grid className={classes.root} container direction="column" xs={12} sm={12}>
             <Grid item container alignItems="center" spacing={3} className={classes.gridBody}>
                 <Grid item>
-                <Avatar className={classes.large} alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                <Avatar src={Photo} className={classes.large} alt="Remy Sharp"/>
                 </Grid>
                 <Grid item>
                     <Grid container alignItems="center" spacing={1} style={{paddingBottom: "3px"}}>

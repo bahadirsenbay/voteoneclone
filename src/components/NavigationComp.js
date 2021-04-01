@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -15,7 +15,8 @@ import FingerprintIcon from '@material-ui/icons/Fingerprint';
 import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
 import Logo from '../img/logo.png'
 import { Link } from 'react-router-dom';
-import { Button, Grid } from '@material-ui/core';
+import { Button, Dialog, Grid } from '@material-ui/core';
+import DialogComp from './DialogComp';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -56,7 +57,19 @@ const useStyles = makeStyles((theme) => ({
 
 
 const NavigationComp = () => {
+  
   const classes = useStyles();
+
+  const [open, setOpen] = useState(false);
+
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Grid style={{paddingTop:20, maxWidth:316}}>
         <Grid style={{marginLeft:55, marginBottom:10}}><img src={Logo} alt="logo" height="50px" width="50px"/></Grid>
@@ -118,10 +131,12 @@ const NavigationComp = () => {
         <ListItemText primary="Prensipler" />
       </ListItem>
     </List>
-    <Button className={classes.postBtn} variant="contained">
+    <Button className={classes.postBtn} onClick={handleClickOpen} variant="contained">
       <CreateOutlinedIcon/>Gönderi Paylaş
     </Button>
-
+    <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+          <DialogComp/>
+        </Dialog>
     </Grid>
     </Grid>
   );

@@ -17,6 +17,7 @@ import {
     Divider} 
 from '@material-ui/core';
 import { isMobile } from 'react-device-detect';
+import DialogComp from './DialogComp';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -105,41 +106,8 @@ const PostAdd = () => {
 
         <Grid>
         <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title" style={{padding: "10px 10px 2px 20px"}}>
-          <Grid item container>
-          <Grid item><IconButton variant="contained" onClick={handleClose}><CloseIcon fontSize="small"/></IconButton></Grid>
-          <Grid item sm></Grid>
-          <Grid item>{ value.length === 0 ? <Button variant="contained" style={{width:90}} disabled>POST</Button> : <Button variant="contained" className={classes.btnCss}>POST</Button>}</Grid>
-          </Grid>
-          </DialogTitle>
-          <Divider/>
-        <DialogContent>
-          <DialogContentText>
-            <Grid container>
-              <Grid item container>
-                <Grid>
-                <Avatar className={classes.large}>
-                  B
-                </Avatar>
-                </Grid>
-                <Grid item>
-                <TextField
-                  className={classes.inputBody}
-                  placeholder="Bir fikrin mi var?"
-                  id="outlined-multiline-static"
-                  InputProps={{ disableUnderline: true }}
-                  onChange={(e) => setValue(e.target.value)}
-                  multiline
-                  rows={8}
-                  value={value}
-                />
-                </Grid>
-              </Grid>
-            </Grid>
-          </DialogContentText>
-          
-        </DialogContent>
-      </Dialog>
+          <DialogComp/>
+        </Dialog>
         </Grid>
         </Grid>
     )

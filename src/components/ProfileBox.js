@@ -4,6 +4,8 @@ import bgImage from '../img/bgCover.jpg'
 import LocationOnOutlinedIcon from '@material-ui/icons/LocationOnOutlined';
 import AttachmentOutlinedIcon from '@material-ui/icons/AttachmentOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
+import Photo from '../img/profile.jpg'
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -52,9 +54,9 @@ const ProfileBox = () => {
                     <Grid item container sm={12} style={{ maxHeight: 300, padding: 15 }} item>
                         <Grid item container sm={10} >
                             <Grid item >
-                                <Avatar className={classes.large}>
+                                <Avatar src={Photo} className={classes.large}>
                                     B
-                        </Avatar>
+                                </Avatar>
                             </Grid>
                             <Grid item>
                                 <Typography variant="h6">Bahadır Şenbay</Typography>

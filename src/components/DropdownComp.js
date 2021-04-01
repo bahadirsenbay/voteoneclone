@@ -1,58 +1,52 @@
-import {  ListItemIcon, ListItemText, Menu, MenuItem } from '@material-ui/core';
+import React, { useState } from 'react';
+import { ListItemIcon, ListItemText, makeStyles, MenuItem } from '@material-ui/core';
+import PersonOutlineOutlinedIcon from '@material-ui/icons/PersonOutlineOutlined';
 import BookmarkBorderOutlinedIcon from '@material-ui/icons/BookmarkBorderOutlined';
 import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
 import ContactSupportOutlinedIcon from '@material-ui/icons/ContactSupportOutlined';
 import NightsStayOutlinedIcon from '@material-ui/icons/NightsStayOutlined';
 import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
-import { withStyles } from '@material-ui/core/styles';
-import React from 'react';
+import { Link } from 'react-router-dom';
 
-const StyledMenu = withStyles({
-    paper: {
-        top:"75px !important",
-        width:297,
-        height:425,
-        border: "1px solid #e2e2e2"
-    }
-})((props) => (
-    <Menu
-      elevation={0}
-      getContentAnchorEl={null}
-      anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'center',
-      }}
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'center',
-      }}
-      {...props}
-    />
-  ));
+const useStyles = makeStyles((theme) => ({
+    root: {
+        backgroundColor: "#F5F5F5",
+        maxWidth: 294,
+        padding: 5,
+        borderRadius: 40,
+        cursor: "pointer",
+        overflow:'hidden'
+    },
 
-const MenuList = () => {
+    large: {
+        width: theme.spacing(6),
+        height: theme.spacing(6),
+        border: "2px solid #69D5EC"
+    },
 
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-        console.log(anchorEl)
+    btnCss: {
+        marginLeft: theme.spacing(4),
+        color: "#7F8199",
+        marginTop: 5
+    },
 
-    };
+    listItem:{
+        fontSize:17
+    },
+}))
+
+const DropdownComp = () => {
+    const classes = useStyles();
+
+    const [anchorEl, setAnchorEl] = useState(null);
 
     const handleClose = () => {
         setAnchorEl(null);
-        console.log(anchorEl)
     };
 
     return(
-                        <StyledMenu
-                    className={classes.menuBody}
-                    id="simple-menu"
-                    anchorEl={anchorEl}
-                    keepMounted
-                    open={Boolean(anchorEl)}
-                    onClose={handleClose}
-                >
-                    <MenuItem onClick={handleClose}>
+        <div>
+            <MenuItem component={Link} to="/profile" onClick={handleClose}>
                         <ListItemIcon style={{marginRight:"-15px"}}>
                             <PersonOutlineOutlinedIcon fontSize="small" />
                         </ListItemIcon>
@@ -106,9 +100,8 @@ const MenuList = () => {
                         </ListItemIcon>
                         <ListItemText classes={{primary: classes.listItem}} primary="Çıkış Yap" />
                     </MenuItem>
-                    
-                </StyledMenu>
+        </div>
     )
 }
 
-export default MenuList;
+export default DropdownComp;
